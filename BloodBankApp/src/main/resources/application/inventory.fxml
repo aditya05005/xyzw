@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="application.InventoryController">
+
+    <top>
+        <Label text="🩸 Blood Inventory Management"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+        </Label>
+    </top>
+
+    <center>
+        <TableView fx:id="bloodTable" prefHeight="300" prefWidth="600" />
+    </center>
+
+    <bottom>
+        <GridPane hgap="10" vgap="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="Blood ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtBloodID" promptText="(optional - auto-generated)"
+                       GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Donation Date:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <DatePicker fx:id="dateDonation" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Volume (ml):" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtVolume" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Blood Group:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtBloodGroup" promptText="A+, O-, etc."
+                       GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <Label text="Donor:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cmbDonor" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+            <HBox spacing="10" GridPane.rowIndex="5" GridPane.columnIndex="1">
+                <Button text="Add Blood Unit" onAction="#addBloodUnit" />
+                <Button text="Update Blood Unit" onAction="#updateBloodUnit" />
+                <Button text="Delete Blood Unit" onAction="#deleteBloodUnit" />
+            </HBox>
+        </GridPane>
+    </bottom>
+
+</BorderPane>

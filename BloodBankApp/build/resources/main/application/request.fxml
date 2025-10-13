@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="application.RequestController"
+            prefWidth="800" prefHeight="600">
+
+    <top>
+        <Label text="Hospital Blood Requests"
+               style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-padding: 15;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox spacing="15">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <GridPane hgap="10" vgap="10">
+                <Label text="Request ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtRequestID" GridPane.rowIndex="0" GridPane.columnIndex="1" editable="false"/>
+
+                <Label text="Blood Group:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtBloodGroup" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Volume:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtVolume" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Hospital ID:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtHospitalID" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button text="Add" onAction="#handleAddRequest"/>
+                <Button text="Update" onAction="#handleUpdateRequest"/>
+                <Button text="Delete" onAction="#handleDeleteRequest"/>
+                <Button text="Refresh" onAction="#loadRequests"/>
+                <Button text="Clear" onAction="#clearFields"/>
+            </HBox>
+
+            <VBox spacing="5">
+                <Label text="All Requests"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                <TableView fx:id="requestTable" prefHeight="200" prefWidth="760">
+                    <columns>
+                        <TableColumn fx:id="colRequestID" text="ID" prefWidth="80"/>
+                        <TableColumn fx:id="colDate" text="Date" prefWidth="120"/>
+                        <TableColumn fx:id="colBloodGroup" text="Blood Group" prefWidth="120"/>
+                        <TableColumn fx:id="colVolume" text="Volume" prefWidth="120"/>
+                        <TableColumn fx:id="colHospitalID" text="Hospital ID" prefWidth="120"/>
+                    </columns>
+                </TableView>
+            </VBox>
+
+            <VBox spacing="5">
+                <Label text="Available Blood Units (Select to Fulfill Request)"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                <TableView fx:id="bloodTable" prefHeight="150" prefWidth="760">
+                    <columns>
+                        <TableColumn fx:id="colBloodID" text="Blood ID" prefWidth="100"/>
+                        <TableColumn fx:id="colDonorID" text="Donor ID" prefWidth="100"/>
+                        <TableColumn fx:id="colDonationDate" text="Donation Date" prefWidth="150"/>
+                        <TableColumn fx:id="colBloodVolume" text="Volume" prefWidth="100"/>
+                        <TableColumn fx:id="colStatus" text="Status" prefWidth="120"/>
+                    </columns>
+                </TableView>
+                <Button text="Fulfill Request" onAction="#handleFulfillRequest" maxWidth="150"/>
+            </VBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

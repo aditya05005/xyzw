@@ -1,0 +1,40 @@
+/* General background for all scenes */
+.root {
+    -fx-background-color: #f4f4f9;
+    -fx-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #6200ea;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8 20 8 20;
+    -fx-background-radius: 5;
+}
+
+.button:hover {
+    -fx-background-color: #3700b3;
+}
+
+/* Labels */
+.label {
+    -fx-text-fill: #222222;
+}
+
+/* TableView header */
+.table-view .column-header-background {
+    -fx-background-color: #6200ea;
+}
+
+.table-view .column-header, 
+.table-view .filler {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* TableView rows */
+.table-view .cell {
+    -fx-text-fill: #333;
+}

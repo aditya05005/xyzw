@@ -1,0 +1,25 @@
+.main-title {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #20243e;
+    -fx-effect: dropshadow(two-pass-box, #cccccc, 4, 0, 2, 2);
+    -fx-padding: 0 0 30 0;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.main-btn {
+    -fx-font-size: 20px;
+    -fx-background-color: linear-gradient(#4f8cfb, #2355cf);
+    -fx-text-fill: white;
+    -fx-background-radius: 14px;
+    -fx-pref-width: 330px;
+    -fx-pref-height: 55px;
+    -fx-effect: dropshadow(three-pass-box, #bcc9f9, 4, 0, 0, 2);
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-cursor: hand;
+}
+
+/* Optional: Button hover effect */
+.main-btn:hover {
+    -fx-background-color: linear-gradient(#2355cf, #4f8cfb);
+}

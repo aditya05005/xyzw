@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="application.DonorController">
+    <top>
+        <Label text="Donor Management" style="-fx-font-size: 18px; -fx-padding: 10;" />
+    </top>
+    <center>
+        <GridPane hgap="10" vgap="10" alignment="CENTER">
+
+            <!-- Existing Fields -->
+            <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtName" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Gender:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cmbGender" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="DOB:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <DatePicker fx:id="dateDOB" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Phone:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtPhone" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <Label text="Apartment:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtApartment" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+            <Label text="Street:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtStreet" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+            <Label text="City:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtCity" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+            <Label text="Blood Group:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cmbBloodGroup" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+            <!-- Buttons for CRUD + Refresh -->
+            <Button text="Add Donor" onAction="#handleAddDonor" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+            <Button text="Update Donor" onAction="#handleUpdateDonor" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+            <Button text="Delete Donor" onAction="#handleDeleteDonor" GridPane.rowIndex="8" GridPane.columnIndex="2"/>
+            <Button text="Refresh Donors" onAction="#refreshDonors" GridPane.rowIndex="8" GridPane.columnIndex="3"/>
+
+            <!-- Search Fields and Button -->
+            <Label text="Search by ID:" GridPane.rowIndex="9" GridPane.columnIndex="0" />
+            <TextField fx:id="txtSearchId" GridPane.rowIndex="9" GridPane.columnIndex="1" promptText="Donor ID"/>
+
+            <Label text="Search by Name:" GridPane.rowIndex="10" GridPane.columnIndex="0" />
+            <TextField fx:id="txtSearchName" GridPane.rowIndex="10" GridPane.columnIndex="1" promptText="Donor Name"/>
+
+            <Button text="Search" onAction="#handleSearchDonor" GridPane.rowIndex="11" GridPane.columnIndex="1"/>
+
+        </GridPane>
+    </center>
+    <bottom>
+        <TableView fx:id="donorTable" prefHeight="300" prefWidth="600"/>
+    </bottom>
+</BorderPane>
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="application.MenuController"
+      alignment="CENTER" spacing="30" style="-fx-background-color: #f8fafc; -fx-padding: 50;">
+    <Label text="Blood Bank Management System" styleClass="main-title"/>
+
+    <Button text="Manage Donors" onAction="#openDonorScreen" styleClass="main-btn"/>
+    <Button text="Hospital Management" onAction="#openHospitalScreen" styleClass="main-btn"/>
+    <Button text="Manage Requests" onAction="#openRequestScreen" styleClass="main-btn"/>
+    <Button text="View Reports" onAction="#openReportScreen" styleClass="main-btn"/>
+    <Button text="Manage Blood Inventory" onAction="#openInventory" styleClass="main-btn"/>
+</VBox>

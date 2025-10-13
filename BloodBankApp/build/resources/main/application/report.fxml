@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="application.ReportController" spacing="10" style="-fx-padding: 20;">
+    <Label text="Reports" style="-fx-font-size: 18px;" />
+
+    <Button text="Show Top Donors" onAction="#showTopDonors"/>
+    <Button text="Show Pending Requests" onAction="#showPendingRequests"/>
+    <Button text="Top Donors" onAction="#showTopDonors"/>
+    <Button text="Pending Requests" onAction="#showPendingRequests"/>
+    <Button text="Top Hospitals" onAction="#showTopHospitals"/>
+    <Button text="Fulfilled Requests" onAction="#showFulfilledRequests"/>
+
+
+    <TableView fx:id="reportTable" prefHeight="300"/>
+</VBox>

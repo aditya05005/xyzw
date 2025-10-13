@@ -1,0 +1,45 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    flatDir {
+        dirs 'lib'
+    }
+}
+
+dependencies {
+    // PostgreSQL JDBC driver
+    implementation files('lib/postgresql-42.7.8.jar')
+
+    // JavaFX modules (add all needed jars manually)
+    implementation files(
+        'C:/Users/Samriddhi/Downloads/openjfx-21.0.8_windows-x64_bin-sdk/javafx-sdk-21.0.8/lib/javafx-base.jar',
+        'C:/Users/Samriddhi/Downloads/openjfx-21.0.8_windows-x64_bin-sdk/javafx-sdk-21.0.8/lib/javafx-controls.jar',
+        'C:/Users/Samriddhi/Downloads/openjfx-21.0.8_windows-x64_bin-sdk/javafx-sdk-21.0.8/lib/javafx-fxml.jar',
+        'C:/Users/Samriddhi/Downloads/openjfx-21.0.8_windows-x64_bin-sdk/javafx-sdk-21.0.8/lib/javafx-graphics.jar',
+        'C:/Users/Samriddhi/Downloads/openjfx-21.0.8_windows-x64_bin-sdk/javafx-sdk-21.0.8/lib/javafx-media.jar',
+        'C:/Users/Samriddhi/Downloads/openjfx-21.0.8_windows-x64_bin-sdk/javafx-sdk-21.0.8/lib/javafx-swing.jar'
+    )
+}
+
+application {
+    mainClass = 'application.Main'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    // Ensure JavaFX is available at compile time
+    options.compilerArgs += [
+        '--module-path', 'C:/Users/Samriddhi/Downloads/openjfx-21.0.8_windows-x64_bin-sdk/javafx-sdk-21.0.8/lib',
+        '--add-modules', 'javafx.controls,javafx.fxml'
+    ]
+}
+
+tasks.withType(JavaExec) {
+    // Ensure JavaFX is available at runtime
+    jvmArgs = [
+        '--module-path', 'C:/Users/Samriddhi/Downloads/openjfx-21.0.8_windows-x64_bin-sdk/javafx-sdk-21.0.8/lib',
+        '--add-modules', 'javafx.controls,javafx.fxml'
+    ]
+}
